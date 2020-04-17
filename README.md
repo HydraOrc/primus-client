@@ -32,7 +32,7 @@ app.configure(primusClient(socket));
 
 // you can add token for auth or other query params
 socket.on('outgoing::url', function connectionURL(url) {
-  set(url, QUERY, `${url.query}&token=${token}`);
+  set(url, 'query', `${url.query}&token=${token}`);
 });
 
 function executePrimusRequest(...args) {
